@@ -14,5 +14,4 @@ class Apply < ActiveRecord::Base
     @id_interview_applied = @interview_applied.collect{|id_applied| id_applied.interview_id}
     return true if @id_interview_applied != [] && @id_interview_applied.include?(interview_id)  
   end
-
 end

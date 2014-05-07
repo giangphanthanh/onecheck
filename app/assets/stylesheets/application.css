@@ -21,3 +21,6 @@
 form#new_interview select{
 	background:#f2f1f0
 }
+.body{
+	padding-top: 10px!important;
+}

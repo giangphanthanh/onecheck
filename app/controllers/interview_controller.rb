@@ -90,4 +90,26 @@ class InterviewController < ApplicationController
       end  
   end
 
+  def save
+     @interview = Interview.parse(params[:interview], current_user.id)
+    if @interview.save
+      render :json => {:id => @interview.id}
+    end
+  end
+  def show_result
+    @interview = Interview.find_by_id(params[:id])
+  end
+  def insert
+      @interview = Interview.find_by_id(params[:interviewid])
+      params[:interview][:questions].each do |key, value|
+        @question = Question.parse(value, @interview.id) if value[:content] != "" 
+        if @question
+          value[:answers].each do |k, v|
+            @answer = Answer.parse(v, @question.id) if v[:content] != ""
+          end
+        end
+      end
+    redirect_to :controller => "interview", :action => "show", :id => @interview.id
+  end
+
 end

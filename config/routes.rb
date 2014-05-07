@@ -12,6 +12,9 @@ Onecheck::Application.routes.draw do
   match "/login/restore-password" => "devise/passwords#create" # Add a Custom Route for Forgot password
 
   end
+  post "/interview/save" => "interview#save"
+  post "/insert" => "interview#insert"
+  get "/interview/show_result" => "interview#show_result"
   match "/interview/new" => "interview#new"
   match "/interview/show" => "interview#show"
   match "/interview/delete" => "interview#delete"
@@ -23,6 +26,7 @@ Onecheck::Application.routes.draw do
   match "/apply/apply_interview" => "apply#apply_interview"
   match "/question/delete" => "question#delete"
   match "/answer/delete" => "answer#delete"
+
   #match "/interview/remove_question" => "interview#remove_question"
   # The priority is based upon order of creation:
   # first created -> highest priority.

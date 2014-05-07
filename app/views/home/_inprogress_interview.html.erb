@@ -1,7 +1,7 @@
 <tr value="<%= interview.id %>" >
   <td><%= interview.id %></td>
   <td><%= interview.title%></td>
-  <td><%= interview.author.email %></td>
+  <td><%= interview.author.email  if interview.author.present?%></td>
   <td><%= interview.time_test %></td>
   <td>
     <%= Apply.count_applied(interview.id) %>

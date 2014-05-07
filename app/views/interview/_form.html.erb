@@ -1,0 +1,18 @@
+<form method="post" class="giang">
+  <h4>Interview Title</h4>
+   <input type="text" id="interview_title" name="interview[title]" placeholder="Interview title..." value="" />
+  <h4>Start date</h4>
+    <input type="text" id="start_date" name="interview[start_date]" placeholder="Start date..." value="" /> <span style="font-style: italic">(optional)</span>
+  <h4>Due date</h4>
+    <input type="text" id="due_date" name="interview[due_date]" placeholder="Due date..." value="" /> <span style="font-style: italic">(optional)</span>
+  <h4>Time Test</h4>
+   <input type="text" id="time_test" name="interview[time_test]" placeholder="Time test..." value="" />
+  <hr />
+<!--   <h4>Question List</h4>
+  <div id="list_question">
+     <%= render :partial => "question" %>
+  </div>
+  <a href="#" id="add_question">Add question</a><br /><br /> -->
+  <input type="button" value="submit" class="btn btn-primary thanh" id="submit_new_interview"/>  
+  <input type="submit" value="Cancel" class="btn" id="cancel_new_interview"/>  
+</form>

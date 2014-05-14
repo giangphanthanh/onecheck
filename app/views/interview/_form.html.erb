@@ -1,18 +1,14 @@
-<form method="post" class="giang">
+ <%= form_for @interview, :html=> {:id => 'interview_form'} do |f| %>
   <h4>Interview Title</h4>
-   <input type="text" id="interview_title" name="interview[title]" placeholder="Interview title..." value="" />
+   <%= f.text_field :title, :name =>"interview[title]", :id =>"interview_title", :placeholder =>"Interview title ..." %>
   <h4>Start date</h4>
-    <input type="text" id="start_date" name="interview[start_date]" placeholder="Start date..." value="" /> <span style="font-style: italic">(optional)</span>
+    <%= f.text_field :start_date, :name =>"interview[start_date]", :placeholder =>"stage date..." %>
+    <span style="font-style: italic">(optional)</span>
   <h4>Due date</h4>
-    <input type="text" id="due_date" name="interview[due_date]" placeholder="Due date..." value="" /> <span style="font-style: italic">(optional)</span>
+  <%= f.text_field :due_date,:name =>"interview[due_date]", :placeholder =>"due date ..." %> 
+    <span style="font-style: italic">(optional)</span>
   <h4>Time Test</h4>
-   <input type="text" id="time_test" name="interview[time_test]" placeholder="Time test..." value="" />
+   <%= f.text_field :time_test, :name =>"interview[time_test]", :id => "time_test", :placeholder =>"Time test ..." %>
   <hr />
-<!--   <h4>Question List</h4>
-  <div id="list_question">
-     <%= render :partial => "question" %>
-  </div>
-  <a href="#" id="add_question">Add question</a><br /><br /> -->
-  <input type="button" value="submit" class="btn btn-primary thanh" id="submit_new_interview"/>  
-  <input type="submit" value="Cancel" class="btn" id="cancel_new_interview"/>  
-</form>
+   <input type="button" value="submit" class="btn btn-primary" id="submit_new_interview"/>  
+<% end %>

@@ -12,7 +12,6 @@ $(".add_answer").live("click", function() {
   return false;
 });
 $("#add_question").live("click",function(){
-  alert("thanh");
   var root_div = $(".div_question")
   var question_id = parseInt(root_div.attr("question_max_number"));
   question_id = question_id + 1;

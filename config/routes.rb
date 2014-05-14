@@ -1,5 +1,5 @@
 Onecheck::Application.routes.draw do
-#devise_for :users
+
   devise_for :users, :controllers => {
                       :registrations => "users/registrations",
                       :omniauth_callbacks => "users/omniauth_callbacks"}
@@ -12,7 +12,10 @@ Onecheck::Application.routes.draw do
   match "/login/restore-password" => "devise/passwords#create" # Add a Custom Route for Forgot password
 
   end
+  resources :interviews
   post "/interview/save" => "interview#save"
+  post "/interview/edit_interview_tow" => "interview#edit_interview_tow"
+  post "/interview/update_interview" => "interview#update_interview"
   post "/insert" => "interview#insert"
   get "/interview/show_result" => "interview#show_result"
   match "/interview/new" => "interview#new"

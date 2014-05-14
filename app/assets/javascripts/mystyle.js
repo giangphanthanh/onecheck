@@ -1,4 +1,9 @@
 $( document ).ready(function() {
+
+   // $('#submit_new_interview').live("click",function(){
+   //   $('#interview_form').hide();
+
+   // });
   $(".add_answer").live("click", function() {
   var class_answer =  $(this).prev('.list_answers')
   var question_id =parseInt( $(this).attr("question_number"));

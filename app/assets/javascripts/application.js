@@ -12,5 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require ajax
 //= require mystyle
+//= require interviews

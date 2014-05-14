@@ -111,5 +111,22 @@ class InterviewController < ApplicationController
       end
     redirect_to :controller => "interview", :action => "show", :id => @interview.id
   end
+  def edit_interview_tow
+    @interview = Interview.find_by_id(params[:id])
+    respond_to do |format|
+        format.js {
+          @return_content = render_to_string(:partial => "/interview/test",:locals => {:interview => @interview})
+        }
+      end
+  end
+  def update_interview
+    @interview = Interview.find(params[:interview][:id])
+    @interview.update_attributes(params[:interview])
+    respond_to do |format|
+        format.js {
+          @return_content = render_to_string(:partial => "/interview/test",:locals => {:interview => @interview})
+        }
+      end
+  end
 
 end
